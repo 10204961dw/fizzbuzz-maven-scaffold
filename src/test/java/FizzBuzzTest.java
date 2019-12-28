@@ -13,7 +13,12 @@ public class FizzBuzzTest {
 
     @Test
     public void when_five_should_return_buzz() {
-        assertThat(fizzBuzz.numOff(15)).isEqualTo("buzz");
+        assertThat(fizzBuzz.numOff(5)).isEqualTo("buzz");
+    }
+
+    @Test
+    public void when_fifteen_should_return_fizzbuzz() {
+        assertThat(fizzBuzz.numOff(15)).isEqualTo("fizzbuzz");
     }
 
     @Test
