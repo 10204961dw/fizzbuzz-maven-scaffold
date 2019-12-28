@@ -11,7 +11,6 @@ public class RoverController {
             return "";
         }
         Area area = new Area(Integer.parseInt(info[0]), Integer.parseInt(info[1]));
-        Rover rover = new Rover();
         rover.land(area, Integer.parseInt(info[2]), Integer.parseInt(info[3]), info[4]);
 
         for (int i = 4; i < info.length; i++) {
