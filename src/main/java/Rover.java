@@ -5,44 +5,44 @@ public class Rover {
 	public static final String WEST  = "W"; //西
 	
 	private Area area;
-	private int x = 0;
-	private int y = 0;
+	private int curX = 0;
+	private int curY = 0;
 	private String direction;
 	public void land(Area area, int x, int y, String direction) throws Exception {
 		if(!area.containsPointWithX(x)) {
-			throw new Exception("x="+x+" is out of area");
+			throw new Exception("curX="+x+" is out of area");
 		}
 		if(!area.containsPointWithY(y)) {
 			throw new Exception("Y="+y+" is out of area");
 		}
 		this.area = area;
-		this.x = x;
-		this.y = y;
+		this.curX = x;
+		this.curY = y;
 		this.direction = direction;
 	}
 	
 	public String getPosition() {
-		String position = "" + x +  y + direction;
+		String position = "" + curX + curY + direction;
 		
 		return position;
 	}
 
 	public void move() throws Exception {
 		if(NORTH.equals(direction)) {
-			y++;
+			curY++;
 		}else if(SOUTH.equals(direction)) {
-			y--;
+			curY--;
 		}else if(EAST.equals(direction)) {
-			x++;
+			curX++;
 		}else if(WEST.equals(direction)) {
-			x--;
+			curX--;
 		}
 		
-		if(!area.containsPointWithX(x)) {
+		if(!area.containsPointWithX(curX)) {
 			throw new Exception("不能移动到区域外");
 		}
 		
-		if(!area.containsPointWithY(y)) {
+		if(!area.containsPointWithY(curY)) {
 			throw new Exception("不能移动到区域外");
 		}
 	}
