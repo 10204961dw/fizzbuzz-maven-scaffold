@@ -9,10 +9,10 @@ public class Rover {
 	private int curY = 0;
 	private String direction;
 	public void land(Area area, int x, int y, String direction) throws Exception {
-		if(!area.containsPointWithX(x)) {
+		if (!area.containsPointWithX(x)) {
 			throw new Exception("X="+x+" is out of area");
 		}
-		if(!area.containsPointWithY(y)) {
+		if (!area.containsPointWithY(y)) {
 			throw new Exception("Y="+y+" is out of area");
 		}
 		this.area = area;
@@ -26,7 +26,7 @@ public class Rover {
 	}
 
 	public void move() throws Exception {
-		if(NORTH.equals(direction)) {
+		if (NORTH.equals(direction)) {
 			curY++;
 		} else if (SOUTH.equals(direction)) {
 			curY--;
@@ -46,7 +46,7 @@ public class Rover {
 	}
 
 	public void turnLeft() {
-		if(NORTH.equals(direction)) {
+		if (NORTH.equals(direction)) {
     		direction = WEST;
 		} else if (SOUTH.equals(direction)) {
 			direction = EAST;
@@ -58,7 +58,7 @@ public class Rover {
 	}
 
     public void turnRight() {
-    	if (NORTH.equals(direction)){
+    	if (NORTH.equals(direction)) {
     		direction = EAST;
 		} else if (SOUTH.equals(direction)) {
 			direction = WEST;
