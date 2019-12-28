@@ -39,7 +39,7 @@ public class MarsRoverTest {
 	@Test
 	public void should_warning_when_land_out_of_area() throws Exception {
 		expectedException.expect(Exception.class);
-		expectedException.expectMessage("curX=20 is out of area");
+		expectedException.expectMessage("X=20 is out of area");
 		
 		Rover rover = new Rover();
 		RoverController roverController = new RoverController(rover);
