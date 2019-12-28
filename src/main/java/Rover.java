@@ -10,10 +10,10 @@ public class Rover {
 	private String direction;
 	public void land(Area area, int x, int y, String direction) throws Exception {
 		if(!area.containsPointWithX(x)) {
-			throw new Exception("curX="+x+" is out of area");
+			throw new Exception("curX=" +x+ " is out of area");
 		}
 		if(!area.containsPointWithY(y)) {
-			throw new Exception("Y="+y+" is out of area");
+			throw new Exception("Y=" +y+ " is out of area");
 		}
 		this.area = area;
 		this.curX = x;
@@ -28,11 +28,11 @@ public class Rover {
 	public void move() throws Exception {
 		if(NORTH.equals(direction)) {
 			curY++;
-		}else if(SOUTH.equals(direction)) {
+		} else if (SOUTH.equals(direction)) {
 			curY--;
-		}else if(EAST.equals(direction)) {
+		} else if (EAST.equals(direction)) {
 			curX++;
-		}else if(WEST.equals(direction)) {
+		} else if (WEST.equals(direction)) {
 			curX--;
 		}
 		
@@ -46,25 +46,25 @@ public class Rover {
 	}
 	
 	public void turnLeft() {
-		if(NORTH.equals(direction)) {
+		if (NORTH.equals(direction)) {
     		direction = WEST;
-		}else if(SOUTH.equals(direction)) {
+		} else if (SOUTH.equals(direction)) {
 			direction = EAST;
-		}else if(EAST.equals(direction)) {
+		} else if (EAST.equals(direction)) {
 			direction = NORTH;
-		}else if(WEST.equals(direction)) {
+		} else if (WEST.equals(direction)) {
 			direction = SOUTH;
 		}
 	}
 	
     public void turnRight() {
-    	if(NORTH.equals(direction)) {
+    	if (NORTH.equals(direction)) {
     		direction = EAST;
-		}else if(SOUTH.equals(direction)) {
+		} else if (SOUTH.equals(direction)) {
 			direction = WEST;
-		}else if(EAST.equals(direction)) {
+		} else if (EAST.equals(direction)) {
 			direction = SOUTH;
-		}else if(WEST.equals(direction)) {
+		} else if (WEST.equals(direction)) {
 			direction = NORTH;
 		}
 	}
