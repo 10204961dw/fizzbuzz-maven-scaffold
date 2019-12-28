@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class FizzBuzzTest {
-    private int number;
+    private int number ;
     private String expectedResult;
 
     public FizzBuzzTest(int number, String expectedResult) {
