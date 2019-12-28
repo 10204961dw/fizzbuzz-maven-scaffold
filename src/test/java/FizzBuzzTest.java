@@ -1,29 +1,36 @@
+
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import java.util.Arrays;
+import java.util.Collection;
 
+import static org.junit.Assert.assertEquals;
+
+@RunWith(Parameterized.class)
 public class FizzBuzzTest {
+    private int number;
+    private String expectedResult;
 
-    private FizzBuzz fizzBuzz = new FizzBuzz();
+    public FizzBuzzTest(int number, String expectedResult) {
+        this.number = number;
+        this.expectedResult = expectedResult;
+    }
 
-    @Test
-    public void when_trible_should_return_fizz() {
-        assertThat(fizzBuzz.numOff(6)).isEqualTo("fizz");
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {1, "1"},
+                {3, "Fizz"},
+                {5, "Buzz"},
+                {15, "FizzBuzz"}
+        });
     }
 
     @Test
-    public void when_five_should_return_buzz() {
-        assertThat(fizzBuzz.numOff(5)).isEqualTo("buzz");
-    }
-
-    @Test
-    public void when_fifteen_should_return_fizzbuzz() {
-        assertThat(fizzBuzz.numOff(15)).isEqualTo("fizzbuzz");
-    }
-
-    @Test
-    public void when_other_should_return_num() {
-        assertThat(fizzBuzz.numOff(7)).isEqualTo("7");
+    public void test() {
+        assertEquals(expectedResult, FizzBuzz.numOff(number));
     }
 }
-

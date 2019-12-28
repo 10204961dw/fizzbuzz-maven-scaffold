@@ -1,13 +1,21 @@
 public class FizzBuzz {
 
-    public String numOff(int param) {
-        if (param % 3 == 0 && param % 5 == 0) {
-            return "fizzbuzz";
-        }else if (param % 3 == 0) {
-            return "fizz";
-        }else if (param % 5 == 0) {
-            return "buzz";
+    public static String numOff(int number) {
+        String result = "";
+        if (number % 3 == 0 && number % 5 == 0) {
+            result = "FizzBuzz";
+        } else if (number % 3 == 0) {
+            result = "Fizz";
+        } else if (number % 5 == 0) {
+            result = "Buzz";
         }
-        return String.valueOf(param);
+
+        if (result.equals("")) {
+
+            return String.valueOf(number);
+        }
+
+        return result;
+
     }
 }
