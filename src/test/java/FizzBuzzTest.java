@@ -25,12 +25,22 @@ public class FizzBuzzTest {
                 {1, "1"},
                 {3, "Fizz"},
                 {5, "Buzz"},
-                {15, "FizzBuzz"}
+                {7, "Whizz"},
+                {15, "FizzBuzz"},
+                {21, "FizzWhizz"},
+                {35, "BuzzWhizz"},
+                {105, "FizzBuzzWhizz"},
+                {0, "Invalid input"},
+                {-1, "Invalid input"}
         });
     }
 
     @Test
     public void test() {
-        assertEquals(expectedResult, FizzBuzz.numOff(number));
+        try {
+            assertEquals(expectedResult, FizzBuzz.numOff(number));
+        } catch (Exception e) {
+            assertEquals(expectedResult,e.getMessage());
+        }
     }
 }
